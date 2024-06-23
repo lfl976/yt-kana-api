@@ -1,0 +1,5 @@
+# ignore python
+__pycache__/
+.idea/
+
+
