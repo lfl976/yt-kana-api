@@ -28,17 +28,17 @@ def tokenize_to_json(text):
     return tokens
 
 
-application = Flask(__name__)
-CORS(application)
+app = Flask(__name__)
+CORS(app)
 
 
-@application.route('/')
+@app.route('/')
 def hello_world():  # put application's code here
     return 'Hello World!'
 
 
 
-@application.route('/translate_subtitles', methods=['GET'])
+@app.route('/translate_subtitles', methods=['GET'])
 def tokenize():
     vid = request.args.get('video_id')
     if not vid:
@@ -56,5 +56,5 @@ def tokenize():
 
 
 if __name__ == '__main__':
-    application.debug = False
-    application.run()
+    app.debug = False
+    app.run()
